@@ -1,10 +1,13 @@
 const { Router } = require('express');
 
 const clienteC = require('../controllers/ClientesController');
+const produC = require('../controllers/ProductosController');
 
 const router = Router();
 
 module.exports = function() {
+    /* CLIENTES */
+    
     //nuevos clientes
     router.post('/clientes', clienteC.nuevoCliente);
     //obtener todos
@@ -15,6 +18,14 @@ module.exports = function() {
     router.put('/clientes/:idCliente', clienteC.actualizarData);
     //eliminar
     router.delete('/clientes/:idCliente', clienteC.eliminar);
+
+    /* PRODUCTOS */
+    router.post('/productos', produC.subirImagen, produC.crear);
+    router.get('/productos', produC.obtenerTodos);
+    router.get('/productos/:idProducto', produC.obtnerById);
+    router.put('/productos/:idProducto', produC.subirImagen, produC.actualizarData);
+    router.delete('/productos/:idProducto', produC.eliminar);
+
 
     return router;
 }
