@@ -50,7 +50,7 @@ exports.crear = async(req, res, next) => {
             msj: 'Producto creado'
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next()
     }
 
@@ -63,7 +63,7 @@ exports.obtenerTodos = async(req, res, next) => {
             productos
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next()
     }
 }
@@ -104,7 +104,7 @@ exports.actualizarData = async(req, res, next) => {
             nuevoProducto
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next()
     }
 }
@@ -125,7 +125,7 @@ exports.eliminar = async(req, res, next) => {
             msj: 'Producto eliminado'
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next()
     }
 }

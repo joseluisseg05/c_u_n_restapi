@@ -9,7 +9,7 @@ exports.crear = async(req, res, next) => {
             msj: 'Se agrego un nuevo pedido'
         })       
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next();
     }
 }
@@ -24,7 +24,7 @@ exports.buscarTodos = async(req, res, next) => {
             pedidos
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next();
     }
 }
@@ -42,7 +42,7 @@ exports.buscarUno = async(req, res, next) => {
             pedido
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next();
     }
 }
@@ -64,7 +64,7 @@ exports.actualizar = async(req, res, next) => {
             pedido
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next();
     }
 }
@@ -76,7 +76,7 @@ exports.eliminar = async(req, res, next) => {
             msj: 'Pedido eliminado'
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next();
     }
 }

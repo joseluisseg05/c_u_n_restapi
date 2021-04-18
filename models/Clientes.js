@@ -13,7 +13,7 @@ const clientesShema = new Schema({
         type: String,
         trim: true
     },
-    emial: {
+    email: {
         type: String,
         unique: true,
         lowercase: true,

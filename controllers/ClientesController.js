@@ -10,7 +10,7 @@ exports.nuevoCliente = async(req, res, next) => {
             msj: 'Se agrego un nuevo cliente'
         })
     } catch (error) {
-        console.log(error);
+        res.send(error)
         next();
     }
 }
@@ -22,7 +22,7 @@ exports.mostrarTodos = async(req, res, next) => {
             clientes
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next();
     }
 }
@@ -52,19 +52,19 @@ exports.actualizarData = async(req, res, next) => {
         );
         res.json({cliente})
     } catch (error) {
-        console.log(error),
+        res.send(error),
         next()
     }
 }
 
 exports.eliminar = async(req, res, next) => {
     try {
-        await Clientes.findOneAndDelete({id : req.params.idCliente});
+        await Clientes.findOneAndDelete({_id : req.params.idCliente});
         res.json({
-            msj: 'deliminado'
+            msj: 'El cliente fue eliminado'
         })
     } catch (error) {
-        console.log(error);
+        res.send(error);
         next();
     }
 }
