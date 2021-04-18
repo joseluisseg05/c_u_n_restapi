@@ -26,6 +26,7 @@ module.exports = function() {
     router.get('/productos/:idProducto', produC.obtnerById);
     router.put('/productos/:idProducto', produC.subirImagen, produC.actualizarData);
     router.delete('/productos/:idProducto', produC.eliminar);
+    router.post('/productos/busqueda/:query', produC.buscarProducto);
 
     /* PEDIDOS */
     router.post('/pedidos', pedidC.crear);
