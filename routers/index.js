@@ -3,6 +3,7 @@ const { Router } = require('express');
 const clienteC = require('../controllers/ClientesController');
 const produC = require('../controllers/ProductosController');
 const pedidC = require('../controllers/PedidosController');
+const userC = require('../controllers/UsuariosController');
 
 const router = Router();
 
@@ -35,6 +36,9 @@ module.exports = function() {
     router.put('/pedidos/:idPedido', pedidC.actualizar);
     router.delete('/pedidos/:idPedido', pedidC.eliminar);
 
+    //Usuario
+    router.post('/crear-cuenta', userC.registrarUsuario);
+    router.post('/iniciar-sesion', userC.autenticarUsuario);
 
     return router;
 }
